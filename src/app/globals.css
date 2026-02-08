@@ -3,23 +3,102 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-primary: #0D0B1E;
+  --bg-secondary: #1A1333;
+  --text-primary: #E8E0F0;
+  --text-secondary: #A89BC2;
+  --accent: #7C3AED;
+  --gold: #F59E0B;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* 별 배경 */
+.stars-bg {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(2px 2px at 250px 20px, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1px 1px at 300px 50px, rgba(255,255,255,0.35), transparent);
+  background-size: 320px 100px;
+  background-repeat: repeat;
+}
+
+/* 글로우 텍스트 */
+.glow-text {
+  text-shadow:
+    0 0 10px rgba(124, 58, 237, 0.5),
+    0 0 30px rgba(124, 58, 237, 0.3),
+    0 0 60px rgba(124, 58, 237, 0.1);
+}
+
+/* 골드 글로우 */
+.glow-gold {
+  text-shadow:
+    0 0 10px rgba(245, 158, 11, 0.5),
+    0 0 30px rgba(245, 158, 11, 0.3),
+    0 0 60px rgba(245, 158, 11, 0.1);
+}
+
+/* 카드 글로우 보더 */
+.glow-border {
+  box-shadow:
+    0 0 15px rgba(124, 58, 237, 0.2),
+    inset 0 0 15px rgba(124, 58, 237, 0.05);
+}
+
+/* 시머 그라디언트 (희귀 뱃지) */
+.shimmer-gradient {
+  background: linear-gradient(
+    110deg,
+    #F59E0B 0%,
+    #FDE68A 25%,
+    #F59E0B 50%,
+    #FDE68A 75%,
+    #F59E0B 100%
+  );
+  background-size: 400% 100%;
+}
+
+/* 수정구슬 그라디언트 */
+.crystal-ball {
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(167, 139, 250, 0.8),
+    rgba(124, 58, 237, 0.6),
+    rgba(91, 33, 182, 0.9)
+  );
+  box-shadow:
+    0 0 30px rgba(124, 58, 237, 0.4),
+    0 0 60px rgba(124, 58, 237, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 결과 카드 캡처용 */
+.result-card-capture {
+  background: linear-gradient(135deg, #1A1333 0%, #0D0B1E 50%, #1A1333 100%);
+}
+
+/* 스크롤바 숨기기 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 선택 효과 */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
