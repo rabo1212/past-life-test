@@ -79,10 +79,10 @@ export default function ShareButtons({
     }
   };
 
-  const handleSaveSquare = async () => {
+  const handleSaveReels = async () => {
     setSavingSquare(true);
     try {
-      const element = document.getElementById("result-card-square");
+      const element = document.getElementById("result-card-reels");
       if (!element) return;
 
       // 캡처를 위해 잠시 보이게
@@ -93,8 +93,8 @@ export default function ShareButtons({
         backgroundColor: "#0D0B1E",
         scale: 2,
         useCORS: true,
-        width: 600,
-        height: 600,
+        width: 540,
+        height: 960,
       });
 
       // 다시 숨기기
@@ -102,11 +102,11 @@ export default function ShareButtons({
       element.style.position = "fixed";
 
       const link = document.createElement("a");
-      link.download = `전생의나_${mbti}_${resultName}_인스타.png`;
+      link.download = `전생의나_${mbti}_${resultName}_릴스.png`;
       link.href = canvas.toDataURL("image/png");
       link.click();
     } catch (err) {
-      console.error("정사각형 이미지 저장 실패:", err);
+      console.error("릴스 이미지 저장 실패:", err);
     } finally {
       setSavingSquare(false);
     }
@@ -194,16 +194,16 @@ export default function ShareButtons({
         </button>
 
         <button
-          onClick={handleSaveSquare}
+          onClick={handleSaveReels}
           disabled={savingSquare}
           className="flex flex-col items-center gap-2 p-3 rounded-xl
                      bg-mystic-800/50 border border-mystic-700/30
                      hover:bg-mystic-700/50 transition-colors
                      disabled:opacity-50"
         >
-          <span className="text-2xl">{savingSquare ? "⏳" : "📷"}</span>
+          <span className="text-2xl">{savingSquare ? "⏳" : "🎬"}</span>
           <span className="text-xs text-[var(--text-secondary)]">
-            {savingSquare ? "저장 중..." : "인스타용"}
+            {savingSquare ? "저장 중..." : "릴스용"}
           </span>
         </button>
 

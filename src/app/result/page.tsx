@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { getTypeById, PastLifeType } from "@/data/results";
 import { getDimensionPercentages, DimensionResult, ScoreMap } from "@/lib/scoring";
 import ResultCard from "@/components/ResultCard";
-import ResultCardSquare from "@/components/ResultCardSquare";
+import ResultCardReels from "@/components/ResultCardSquare";
 import ShareButtons from "@/components/ShareButtons";
 import ParticleBackground from "@/components/ParticleBackground";
 
@@ -63,7 +63,7 @@ function ResultContent() {
       <ParticleBackground />
       <div className="relative z-10">
         <ResultCard result={result} dimensions={dimensions} />
-        <ResultCardSquare result={result} dimensions={dimensions} />
+        <ResultCardReels result={result} dimensions={dimensions} />
         <ShareButtons
           resultId={result.id}
           resultName={result.name}
