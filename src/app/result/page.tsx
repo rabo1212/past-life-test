@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { getTypeById, PastLifeType } from "@/data/results";
 import { getDimensionPercentages, DimensionResult, ScoreMap } from "@/lib/scoring";
 import ResultCard from "@/components/ResultCard";
+import ResultCardSquare from "@/components/ResultCardSquare";
 import ShareButtons from "@/components/ShareButtons";
 import ParticleBackground from "@/components/ParticleBackground";
 
@@ -62,14 +63,27 @@ function ResultContent() {
       <ParticleBackground />
       <div className="relative z-10">
         <ResultCard result={result} dimensions={dimensions} />
-        <ShareButtons resultId={result.id} resultName={result.name} mbti={result.mbti} />
+        <ResultCardSquare result={result} dimensions={dimensions} />
+        <ShareButtons
+          resultId={result.id}
+          resultName={result.name}
+          mbti={result.mbti}
+          rarity={result.rarity}
+          compatibility={result.compatibility}
+        />
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 space-y-3">
           <button
             onClick={() => router.push("/types")}
-            className="text-arcane-400 text-sm underline underline-offset-4 hover:text-arcane-300"
+            className="text-arcane-400 text-sm underline underline-offset-4 hover:text-arcane-300 block mx-auto"
           >
             16가지 전생 유형 모두 보기
+          </button>
+          <button
+            onClick={() => router.push("/stats")}
+            className="text-[var(--text-secondary)] text-sm underline underline-offset-4 hover:text-arcane-400 block mx-auto"
+          >
+            MBTI 전생 통계 보기
           </button>
         </div>
       </div>

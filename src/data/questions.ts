@@ -63,8 +63,8 @@ export const questions: Question[] = [
     text: "전생에서 당신이 가장 잘했던 일은?",
     subtitle: "하나만 고르세요",
     choices: [
-      { text: "부서진 것을 고치고 실질적인 물건을 만드는 것", scores: { S: 3 } },
-      { text: "사람들의 병을 낫게 하고 약초를 다루는 것", scores: { S: 2, F: 1 } },
+      { text: "손에 잡히는 재료로 직접 무언가를 만드는 것", scores: { S: 3 } },
+      { text: "눈앞에 보이는 문제를 하나하나 해결하는 것", scores: { S: 2, T: 1 } },
       { text: "아무도 상상하지 못한 예언과 비전을 제시하는 것", scores: { N: 3 } },
       { text: "보이지 않는 것들의 연결고리를 발견하는 것", scores: { N: 2, T: 1 } },
     ],
@@ -74,7 +74,7 @@ export const questions: Question[] = [
     text: "전생의 꿈에서 반복적으로 보이는 장면은?",
     subtitle: "가장 선명한 것을 고르세요",
     choices: [
-      { text: "손에 잡히는 금화와 보석의 무게", scores: { S: 2, E: 1 } },
+      { text: "손에 잡히는 금화와 보석의 무게", scores: { S: 3 } },
       { text: "익숙한 길과 매일 지나던 풍경", scores: { S: 2, J: 1 } },
       { text: "끝이 보이지 않는 미지의 대륙", scores: { N: 2, P: 1 } },
       { text: "현실에 없는 색과 형태의 환상", scores: { N: 3 } },

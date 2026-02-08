@@ -25,6 +25,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <script
+          src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
+          integrity="sha384-DKYJZ8NLiK8MN4/C5P2ezmFnkrMiqJ/IjnpRToyLcDC8a3J+BjEEGoIYMQGahgi"
+          crossOrigin="anonymous"
+          async
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', function() {
+                if (window.Kakao && !window.Kakao.isInitialized()) {
+                  window.Kakao.init('YOUR_KAKAO_APP_KEY');
+                }
+              });
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} antialiased bg-mystic-950 text-[var(--text-primary)] stars-bg`}
       >

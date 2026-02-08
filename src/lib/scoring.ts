@@ -47,3 +47,11 @@ export function addScores(current: ScoreMap, newScores: Record<string, number>):
   }
   return result;
 }
+
+export function subtractScores(current: ScoreMap, toRemove: Record<string, number>): ScoreMap {
+  const result = { ...current };
+  for (const [key, value] of Object.entries(toRemove)) {
+    result[key] = Math.max(0, (result[key] || 0) - value);
+  }
+  return result;
+}
